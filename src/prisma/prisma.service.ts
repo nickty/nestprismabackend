@@ -7,6 +7,7 @@ export class PrismaService extends PrismaClient {
     super({
       datasources: {
         db: {
+          // url: 'mongodb://localhost/bongodesh2',
           url: 'mongodb+srv://bongoweb:Nick$300^12@cluster0.t4q5myy.mongodb.net/nesttest',
         },
       },

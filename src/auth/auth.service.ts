@@ -20,6 +20,8 @@ export class AuthService {
       },
     });
 
+    await delete user.hash;
+
     // return the saved user
     return user;
   }
