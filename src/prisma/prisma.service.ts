@@ -1,14 +1,15 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
+import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class PrismaService extends PrismaClient {
-  constructor() {
+  constructor(config: ConfigService) {
     super({
       datasources: {
         db: {
           // url: 'mongodb://localhost/bongodesh2',
-          url: 'mongodb+srv://bongoweb:Nick$300^12@cluster0.t4q5myy.mongodb.net/nesttest',
+          url: config.get('DATABASE_URL'),
         },
       },
     });
